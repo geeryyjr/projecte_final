@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="text-center py-5">
+    <h1 class="display-4 text-primary">Descubre el Mundo</h1>
+    <p class="lead">Las mejores ofertas en viajes, hoteles y vuelos.</p>
+    <img src="https://source.unsplash.com/random/800x400/?travel,beach" class="img-fluid rounded shadow mb-4" alt="Viajes">
+    <br>
+    {% if not session.get('user_id') %}
+        <a href="/register" class="btn btn-warning btn-lg">Regístrate para ver ofertas</a>
+    {% else %}
+        <a href="/dashboard" class="btn btn-primary btn-lg">Gestionar Viajes</a>
+    {% endif %}
+</div>
+{% endblock %}

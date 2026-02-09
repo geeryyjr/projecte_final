@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Horizon Travels</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body { background-color: #e0f7fa; } /* Azul clarito tipo cielo */
+        .card { border: none; }
+        .navbar { background-color: #006064 !important; } /* Azul oscuro elegante */
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark mb-4">
+        <div class="container">
+            <a class="navbar-brand" href="/">✈️ Horizon Travels</a>
+            <div class="navbar-nav ms-auto">
+                <a class="nav-link" href="/">Inicio</a>
+                <a class="nav-link" href="/about">Portfolio</a>
+                {% if session.get('user_id') %}
+                    <a class="nav-link active" href="/dashboard">Panel de Control</a>
+                    <a class="nav-link btn btn-danger btn-sm text-white ms-2" href="/logout">Salir</a>
+                {% else %}
+                    <a class="nav-link" href="/login">Login</a>
+                {% endif %}
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        {% block content %}{% endblock %}
+    </div>
+</body>
+</html>
+
