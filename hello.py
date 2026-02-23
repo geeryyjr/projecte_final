@@ -14,7 +14,7 @@ def about():
     # Portafolio actualizado
     proyectos = [
         {"nombre": "Horizon Travels", "desc": "Gestión de agencia de viajes (CRUD completo)."},
-        {"nombre": "Futbol League", "desc": "Gestión de torneos deportivos."},
+        
         {"nombre": "Calculadora Edat", "desc": "Lógica básica con Python."}
     ]
     return render_template("about.html", proyectos=proyectos)
