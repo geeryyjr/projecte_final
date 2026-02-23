@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row justify-content-center mt-4">
+    <div class="col-md-8">
+        <div class="card shadow border-0" style="background-color: #f8f9fa;">
+            <div class="card-body text-center p-5">
+                <h1 class="text-primary mb-3">✈️ Sobre Mí</h1>
+                <p class="lead text-muted">
+                    ¡Hola! Soy <strong>Gerard Gonzalez</strong>, estudiante de Desarrollo Web. Esta página es mi portafolio donde muestro mi progreso programando aplicaciones web con <strong>Python, Flask y MySQL</strong>.
+                </p>
+            </div>
+        </div>
+
+        <h3 class="mt-5 mb-4 text-secondary">Mis Proyectos del Curso:</h3>
+        
+        <div class="list-group shadow-sm">
+            {% for proyecto in proyectos %}
+            <div class="list-group-item list-group-item-action p-4">
+                <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-2 text-info fw-bold">{{ proyecto.nombre }}</h5>
+                </div>
+                <p class="mb-1 text-secondary">{{ proyecto.desc }}</p>
+            </div>
+            {% endfor %}
+        </div>
+        
+    </div>
+</div>
+{% endblock %}
+
